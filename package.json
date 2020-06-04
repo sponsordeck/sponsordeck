@@ -1,0 +1,74 @@
+{
+  "name": "sponsordeck",
+  "version": "0.0.0",
+  "description": "Advertise to designers, developers, and other tech audiences through an exclusive network of websites and app.",
+  "homepage": "https://sponsordeck.co",
+  "repository": "sponsordeck/sponsordeck",
+  "license": "MIT",
+  "author": "CJ Patoilo <cjpatoilo@gmail.com>",
+  "private": false,
+  "main": "dist/sponsordeck.js",
+  "module": "dist/sponsordeck.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "🐥",
+    "sponsordeck"
+  ],
+  "ignore": [
+    "*.log",
+    ".DS_Store",
+    ".cache"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.2",
+    "parcel": "^1.12.4",
+    "prettier-standard": "^16.3.0",
+    "surge": "^0.21.3",
+    "typescript": "^3.8.3"
+  },
+  "peerDependencies": {},
+  "scripts": {
+    "build": "parcel build sponsordeck.ts",
+    "deploy": "npm run build && surge -p dist -d cdn.sponsordeck.co",
+    "lint": "prettier-standard --check",
+    "start": "parcel example.html --port 3000 --open",
+    "test": "jest index.test.ts"
+  },
+  "engines": {
+    "node": "^12.17.0",
+    "npm": "^6.14.5"
+  },
+  "prettier": {
+    "jsxSingleQuote": false,
+    "trailingComma": "all"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": [
+      "prettier-standard --format",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.3%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

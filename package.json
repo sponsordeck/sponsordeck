@@ -27,7 +27,7 @@
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "lint-staged": "^10.2.2",
-    "parcel": "^1.12.4",
+    "parcel": "^2.8.3",
     "prettier-standard": "^16.3.0",
     "surge": "^0.21.3",
     "typescript": "^3.8.3"
